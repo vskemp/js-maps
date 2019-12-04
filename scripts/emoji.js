@@ -45,7 +45,7 @@ recipesObj.sushiRecipe["rice"]
 // DONT
 recipesObj.sushiRecipe.ingredientName
 recipesObj.sushiRecipe["ingredientName"]
-
+//
 const ingredientName = "rice";
 
 // use Object.keys() to get an array of key names
@@ -73,3 +73,39 @@ const ingredientsArray = [
     "🐓",
     "🌽"
 ];
+
+
+function cook(ingredient) {
+    const recipes = {
+        "🐄": "🍔",
+        "🌽": "🍿",
+        "🐓": "🍗",
+        "🥔": "🍟",
+    };
+    return recipes[ingredient];
+    //transform the ingredient into something you can eat
+}
+
+// const foods = ingredientsArray.map(cook);
+
+function isVegetarian(food) {
+    const veggies = [
+        "🍟",
+        "🍿"
+    ];
+
+    if (veggies.includes(food)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+const foods = ingredientsArray.map(cook);
+const veggieFoods = foods.filter(isVegetarian);
+// EQUIVALENT TO:
+
+const theVeggies = ingredientsArray.map(cook).filter(isVegetarian);
+
+// const foodsArray = Object.values(recipesObj2)
+// foodsArray.filter(isVegetarian);
