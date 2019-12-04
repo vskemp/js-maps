@@ -60,6 +60,13 @@ recipesObj.potato = "potato salad";
 recipesObj["potato"] = "baked potato";
 // if a key doesn't exist yet, it adds a new key value pair to the object
 
+recipesObj["🌾"] = "🍺";
+recipesObj.wheat = "🍺";
+
+// delete a key/value pair
+// using the delte leywaord
+delete recipesObj.potato
+
 const ingredientsArray = [
     "🐄",
     "🥔",
