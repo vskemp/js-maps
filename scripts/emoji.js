@@ -16,12 +16,14 @@ const recipesObj = {
     potato: "fries",
     // if you're not using emojis or other special characters, the key doesn't need quotes!
     chicken: "fried chicken",
+
+    //Key names are always strings, whether you choose to put quotes around them or not
     // key/value pairs are seperated by commas
     //NOTE!
     // the order of your key valued pairs is never garenteed. The language and your browser will shuffle things to optomize how it's storing the information
-    "riceAndBeans": {
+    "sushiRecipe": {
         "rice": "🍚",
-        "beans": "🥣"
+        "fish": "🐟"
     }
 };
 // to retrieve a value, you can use square brackets and specify the name of the key
@@ -33,6 +35,30 @@ recipesObj[anIngredient];
 recipesObj["🥔"]
 // OR use the dot notation
 recipesObj.potato;
+// shorthand for braket notation
+
+//Nested retrieval:
+recipesObj["sushiRecipe"]["rice"]
+recipesObj.sushiRecipe.rice 
+recipesObj["sushiRecipe"].rice
+recipesObj.sushiRecipe["rice"]
+// DONT
+recipesObj.sushiRecipe.ingredientName
+recipesObj.sushiRecipe["ingredientName"]
+
+const ingredientName = "rice";
+
+// use Object.keys() to get an array of key names
+for(let ingredient of Object.keys(recipesObj)) {
+    //use the bracket syntax when your key name is in a varieable
+    console.log(recipesObj[ingredient]);
+}
+
+// to update a spot in an object, just reassign that spot
+
+recipesObj.potato = "potato salad";
+recipesObj["potato"] = "baked potato";
+// if a key doesn't exist yet, it adds a new key value pair to the object
 
 const ingredientsArray = [
     "🐄",
